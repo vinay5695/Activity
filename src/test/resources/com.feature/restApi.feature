@@ -8,5 +8,5 @@ Feature: Test the Github Api functionality
     
     Examples:
     |baseurl|token|geturl|responsecode|name|ownerid|pushpermission|
-    |repos/|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|vinay5695/Activity|200|name|owner.id|permissions.push|
+    |repos/|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|vinay5695/Activity|200|name|owner.id|permissions.push|
     
