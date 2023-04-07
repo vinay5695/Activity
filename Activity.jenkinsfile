@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+    //    stage('checkOut') {
+    //        steps {
+                // Get some code from a GitHub repository
+   //             git branch: 'master', credentialsId: 'Git', url: 'https://github.com/vinay5695/Activity/'
+   //         }
+
+  //      }
+        stage('Build') {
+            steps {
+                bat 'mvn test' 
+            }
+        )
+		}
+            post {
+        always {
+            cucumber buildStatus: 'null', customCssFiles: '', customJsFiles: '', failedFeaturesNumber: -1, failedScenariosNumber: -1, failedStepsNumber: -1, fileIncludePattern: '**/*.json', pendingStepsNumber: -1, skippedStepsNumber: -1, sortingMethod: 'ALPHABETICAL', undefinedStepsNumber: -1
+            
+        }
+        }    
+    
+}
