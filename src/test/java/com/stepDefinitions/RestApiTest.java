@@ -13,10 +13,10 @@ public class RestApiTest {
 	private RequestSpecification reqspec;
 	private Response response;
 
-	@Given("I have to given the endpoint of the github get function {string} {string}")
-	public void i_have_to_given_the_endpoint_of_the_github_get_function(String baseurl, String token) {
+	@Given("I have to given the endpoint of the github get function {string}")
+	public void i_have_to_given_the_endpoint_of_the_github_get_function(String baseurl) {
 		RestAssured.baseURI=baseUrl+baseurl;
-		reqspec=RestAssured.given().header("Authorization","Bearer "+token);
+		reqspec=RestAssured.given();
 	}
 
 	@When("I have to sent get request {string}")
@@ -24,14 +24,13 @@ public class RestApiTest {
 		response =reqspec.get(geturl);
 	}
 
-	@Then("I have to validate the response {int} {string} {string} {string}")
-	public void i_have_to_validate_the_response_reponsecode(int responsecode,String name, String ownerid, String pushpermission) {
+	@Then("I have to validate the response {int} {string} {string}")
+	public void i_have_to_validate_the_response_reponsecode(int responsecode,String name, String ownerid) {
 		Assert.assertEquals(responsecode, response.getStatusCode());
 		String jsonString = response.asString();
 		System.out.println(jsonString);
 		Assert.assertEquals(JsonPath.from(jsonString).getString(name), "Activity");
 		Assert.assertEquals(JsonPath.from(jsonString).getInt(ownerid), 126647047);
-		Assert.assertEquals(JsonPath.from(jsonString).getBoolean(pushpermission), true);
 	}
 	
 
