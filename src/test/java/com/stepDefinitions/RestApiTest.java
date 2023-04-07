@@ -28,6 +28,7 @@ public class RestApiTest {
 	public void i_have_to_validate_the_response_reponsecode(int responsecode,String name, String ownerid, String pushpermission) {
 		Assert.assertEquals(responsecode, response.getStatusCode());
 		String jsonString = response.asString();
+		System.out.println(jsonString);
 		Assert.assertEquals(JsonPath.from(jsonString).getString(name), "Activity");
 		Assert.assertEquals(JsonPath.from(jsonString).getInt(ownerid), 126647047);
 		Assert.assertEquals(JsonPath.from(jsonString).getBoolean(pushpermission), true);
