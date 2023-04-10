@@ -5,7 +5,9 @@ import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
-//Test runner class is used to run the tests with cucumber options and junit 
+/*Test runner class is used to run the tests with cucumber options and junit 
+ * @author vinay
+ */
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features ="src/test/resources/com.feature",
