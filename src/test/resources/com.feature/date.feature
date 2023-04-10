@@ -1,4 +1,4 @@
-Feature: Test the date add feature
+Feature: This feature is used to add date to current date
 
   @java
   Scenario: Add date to current date

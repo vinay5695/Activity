@@ -1,5 +1,5 @@
 @api
-Feature: Test the Github Api functionality
+Feature: Test the Github Api Get functionality
 
   Scenario Outline: Get a respository of a user
     Given I have to given the endpoint of the github get function "<baseurl>"
